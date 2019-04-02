@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>
+Here are the upcoming elections in {{city}}, {{state}}:<br>
+</h2>
+<div >
+    <h3>{{description}}</h3>
+    <h4>
+        The election is on: <br> 
+        {{date}}
+    </h4>
+
+    <!-- If there is no website, don't display this line at all -->
+    {% if website %}
+    <h4>
+        You can learn more about the elections by clicking <a href="{{website}}">here</a>.
+    </h4>
+    {% endif %}
+
+    <h4>
+        Locate your polling location by clicking <a href="{{polling_place_url}}">here</a>.
+    </h4>
+</div>
+{% endblock %}
